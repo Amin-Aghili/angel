@@ -16,10 +16,12 @@ class CustomUser(AbstractBaseUser):
     def __str__(self):
         return self.email
 
-    def has_perm(self, perm, obj=None):
+    @staticmethod
+    def has_perm(perm, obj=None):
         return True
 
-    def has_module_perms(self, app_label):
+    @staticmethod
+    def has_module_perms(app_label):
         return True
 
     @property
